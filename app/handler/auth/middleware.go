@@ -42,17 +42,6 @@ func Middleware(app *app.App) func(http.Handler) http.Handler {
 			} else {
 				next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), contextKey, account)))
 			}
-
-			// password := pair[2]
-			// if account, err := app.Dao.Account().createUser(ctx, username, password); err != nil {
-			// 	httperror.InternalServerError(w, err)
-			// 	return
-			// } else if account == nil {
-			// 	httperror.Error(w, http.StatusUnauthorized)
-			// 	return
-			// } else {
-			// 	next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), contextKey, account)))
-			// }
 		})
 	}
 }
