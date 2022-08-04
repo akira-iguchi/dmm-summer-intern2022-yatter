@@ -35,12 +35,10 @@ func (r *timeline) PublicTimelines(ctx context.Context, maxId int, sinceId int, 
 	var timelines []*object.Status
 	for rows.Next() {
 		status := new(object.Status)
-		err = rows.StructScan(&status)
-		if err != nil {
+		if err = rows.StructScan(&status); err != nil {
 			return nil, err
 		}
 		timelines = append(timelines, status)
-
 	}
 	return timelines, nil
 }

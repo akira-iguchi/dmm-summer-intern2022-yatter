@@ -5,24 +5,41 @@ import (
 	"net/http"
 	"strconv"
 
+	// "log"
 	"yatter-backend-go/app/handler/httperror"
 )
 
-type AddRequest struct {
-	OnlyMedia bool
-	MaxId     int
-	SinceId   int
-	Limit     int
+type Queries struct {
+	MaxId   int
+	SinceId int
+	Limit   int
 }
 
 func (h handler) Index(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
-	maxId, _ := strconv.Atoi(r.FormValue("max_id"))
-	sinceId, _ := strconv.Atoi(r.FormValue("since_id"))
-	limit, _ := strconv.Atoi(r.FormValue("limit"))
+	var formValues Queries
+	queries := []string{"max_id", "since_id", "limit"}
+	for _, v := range queries {
+		value, err := strconv.Atoi(r.FormValue(v))
+		if err != nil {
+			httperror.Error(w, http.StatusBadRequest)
+			return
+		}
+		switch v {
+		case "max_id":
+			formValues.MaxId = value
+		case "since_id":
+			formValues.SinceId = value
+		case "limit":
+			formValues.Limit = value
+		default:
+			httperror.Error(w, http.StatusBadRequest)
+			return
+		}
+	}
 
-	if timelines, err := h.app.Dao.Timeline().PublicTimelines(ctx, maxId, sinceId, limit); err != nil {
+	if timelines, err := h.app.Dao.Timeline().PublicTimelines(ctx, formValues.MaxId, formValues.SinceId, formValues.Limit); err != nil {
 		httperror.InternalServerError(w, err)
 		return
 	} else if timelines == nil {
