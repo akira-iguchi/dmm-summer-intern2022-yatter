@@ -7,5 +7,5 @@ import (
 )
 
 type Timeline interface {
-	AllStatuses(ctx context.Context) (*object.Timelines, error)
+	PublicTimelines(ctx context.Context, max_id int, since_id int, limit int) ([]*object.Status, error)
 }

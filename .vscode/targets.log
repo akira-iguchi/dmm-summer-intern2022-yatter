@@ -1,0 +1,351 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Thu Aug  4 17:24:10 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 12)
+GIT_URL = local-git://
+# environment
+ZPLUG_LOG_LOAD_SUCCESS = false
+# makefile (from `Makefile', line 2)
+MAKEFILE_DIR := /Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter/
+# environment
+ZPLUG_LOG_LOAD_FAILURE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# environment
+PERIOD = 30
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := /Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter
+# makefile (from `Makefile', line 5)
+SHELL := env PATH="/Users/iguchiakira/.nodebrew/current/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/iguchiakira/.zplug/repos/zplug/zplug/bin:/Users/iguchiakira/.zplug/bin:/Users/iguchiakira/Downloads/programming/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/iguchiakira/Downloads/programming/flutter/.pub-cache/bin:/Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter/bin" /bin/bash
+# environment
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"29207410cd77a70b4b25e4878dda93be.ja","_translationsConfigFile":"/Users/iguchiakira/Library/Application Support/Code/clp/29207410cd77a70b4b25e4878dda93be.ja/tcf.json","_cacheRoot":"/Users/iguchiakira/Library/Application Support/Code/clp/29207410cd77a70b4b25e4878dda93be.ja","_resolvedLanguagePackCoreLocation":"/Users/iguchiakira/Library/Application Support/Code/clp/29207410cd77a70b4b25e4878dda93be.ja/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/Users/iguchiakira/Library/Application Support/Code/clp/29207410cd77a70b4b25e4878dda93be.ja/corrupted.info","_languagePackSupport":true}
+# environment
+_ZPLUG_CONFIG_SUBSHELL = :
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+ZPLUG_THREADS = 16
+# environment
+ZPLUG_FILTER = fzf-tmux:fzf:peco:percol:fzy:zaw
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# environment
+_ZPLUG_VERSION = 2.4.2
+# environment
+P9K_SSH = 0
+# environment
+VSCODE_CWD = /
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# makefile (from `Makefile', line 14)
+LDFLAGS := -ldflags "-X main.VERSION= -X main.COMMIT=683fd07a4d9131921c61f9f1df24bf2f554cf6d2 -X main.BRANCH=akira_iguchi"
+# makefile (from `Makefile', line 4)
+PATH := /Users/iguchiakira/.nodebrew/current/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/iguchiakira/.zplug/repos/zplug/zplug/bin:/Users/iguchiakira/.zplug/bin:/Users/iguchiakira/Downloads/programming/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/iguchiakira/Downloads/programming/flutter/.pub-cache/bin:/Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter/bin
+# makefile (from `Makefile', line 7)
+CGO_ENABLED = 0
+# environment
+FPATH = /Users/iguchiakira/.zsh/completion:/Users/iguchiakira/.zplug/repos/zplug/zplug/misc/completions:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/sources:/Users/iguchiakira/.zplug/repos/zplug/zplug/autoload:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/utils:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/job:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/log:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/io:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/core:/Users/iguchiakira/.zplug/repos/zplug/zplug/base/base:/Users/iguchiakira/.zplug/repos/zplug/zplug/autoload/commands:/Users/iguchiakira/.zplug/repos/zplug/zplug/autoload/options:/Users/iguchiakira/.zplug/repos/zplug/zplug/autoload/tags:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.8.1/functions:/Users/iguchiakira/.zplug/repos/zsh-users/zsh-completions/src
+# environment
+ZPLUG_HOME = /Users/iguchiakira/.zplug
+# environment
+ZPLUG_CACHE_DIR = /Users/iguchiakira/.zplug/cache
+# environment
+GOPATH = /Users/iguchiakira/go
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 10)
+COMMIT = $(shell git rev-parse HEAD)
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.GrA39NVdHw/Listeners
+# automatic
+%F = $(notdir $%)
+# default
+MAKEFILES := 
+# environment
+ZPLUG_PROTOCOL = HTTPS
+# environment
+PWD = /Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+_ZPLUG_URL = https://github.com/zplug/zplug
+# environment
+MANPATH = /opt/homebrew/share/man::
+# environment
+GOMODCACHE = /Users/iguchiakira/go/pkg/mod
+# environment
+HOME = /Users/iguchiakira
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# makefile (from `Makefile', line 1)
+BINARY := yatter-backend-go
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/iguchiakira/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = iguchiakira
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+ZSH = /Users/iguchiakira/.zplug/repos/robbyrussell/oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+ZPLUG_BIN = /Users/iguchiakira/.zplug/bin
+# environment
+_ZPLUG_PREZTO = sorin-ionescu/prezto
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = iguchiakira
+# makefile
+.DEFAULT_GOAL := build
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+ZSH_CACHE_DIR = /Users/iguchiakira/.zplug/repos/robbyrussell/oh-my-zsh/cache/
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/9m/q8094dz96gbcq9w7ns66s8fh0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/iguchiakira/Library/Application Support/Code/1.69.2-main.sock
+# environment
+MallocNanoZone = 0
+# environment
+_ZPLUG_AWKPATH = /Users/iguchiakira/.zplug/repos/zplug/zplug/misc/contrib
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.4712732.4712738
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+ZPLUG_USE_CACHE = true
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+ZPLUG_REPOS = /Users/iguchiakira/.zplug/repos
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x1:0xE
+# environment
+COMMAND_MODE = unix2003
+# environment
+ZPLUG_ROOT = /Users/iguchiakira/.zplug/repos/zplug/zplug
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 11)
+BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
+# environment
+LC_ALL = C
+# environment
+_ZPLUG_OHMYZSH = robbyrussell/oh-my-zsh
+# makefile (from `Makefile', line 8)
+GOARCH = amd64
+# automatic
+^F = $(notdir $^)
+# environment
+ZPLUG_ERROR_LOG = /Users/iguchiakira/.zplug/.error_log
+# default
+SUFFIXES := 
+# environment
+MAKELEVEL := 0
+# environment
+ZPLUG_LOADFILE = /Users/iguchiakira/.zplug/packages.zsh
+# environment
+LANG = C
+# environment
+VSCODE_PID = 89302
+# variable set hash-table stats:
+# Load=97/1024=9%, Rehash=0, Collisions=11/133=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777233, inode 5069983): 23 files, no impossibilities.
+
+# 23 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+build-linux:
+ 
+make: *** No rule to make target `all'.  Stop.
+
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 22):
+	GOOS=linux GOARCH=${GOARCH} go build ${LDFLAGS} -o build/${BINARY}-linux-${GOARCH} .
+	
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+.PHONY: test clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-03 10:06:25
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+test:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 30):
+	go test $(shell go list ${MAKEFILE_DIR}/...)
+	
+
+build: build-linux
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+prepare: mod
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+vet:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	go vet ./...
+	
+
+build-default:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 19):
+	go build ${LDFLAGS} -o build/${BINARY}
+	
+
+lint:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 33):
+	if ! [ -x $(GOPATH)/bin/golangci-lint ]; then \
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GOPATH)/bin v1.38.0 ; \
+	fi
+	golangci-lint run --concurrency 2
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 42):
+	git clean -f -X app bin build
+	
+
+mod:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 27):
+	go mod download
+	
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=1/30=3%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Thu Aug  4 17:24:10 2022
+
+ 
