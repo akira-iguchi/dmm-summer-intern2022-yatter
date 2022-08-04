@@ -1,4 +1,4 @@
-package accounts
+package timelines
 
 import (
 	"net/http"
@@ -13,13 +13,12 @@ type handler struct {
 	app *app.App
 }
 
-// Create Handler for `/v1/accounts/`
 func NewRouter(app *app.App) http.Handler {
 	r := chi.NewRouter()
 
 	h := &handler{app: app}
-	r.Get("/{username}", h.Show)
-	r.Post("/", h.Create)
+
+	r.Get("/public", h.Index)
 
 	return r
 }

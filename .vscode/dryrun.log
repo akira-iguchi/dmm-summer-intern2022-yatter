@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter'
+GOOS=linux GOARCH=amd64 go build -ldflags "-X main.VERSION= -X main.COMMIT=683fd07a4d9131921c61f9f1df24bf2f554cf6d2 -X main.BRANCH=akira_iguchi" -o build/yatter-backend-go-linux-amd64 .
+make: Leaving directory `/Users/iguchiakira/Downloads/programming/dmm-summer-intern2022-yatter'
+ 

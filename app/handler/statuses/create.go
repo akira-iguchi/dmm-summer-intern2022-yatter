@@ -1,20 +1,20 @@
-package accounts
+package statuses
 
 import (
 	"encoding/json"
 	"net/http"
 
 	"yatter-backend-go/app/domain/object"
+	"yatter-backend-go/app/handler/auth"
 	"yatter-backend-go/app/handler/httperror"
 )
 
-// Request body for `POST /v1/accounts`
+// Request body for `POST /v1/statuses`
 type AddRequest struct {
-	Username string
-	Password string
+	Status *string
 }
 
-// Handle request for `POST /v1/accounts`
+// Handle request for `POST /v1/statuses`
 func (h *handler) Create(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
@@ -24,26 +24,24 @@ func (h *handler) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	account := new(object.Account)
-	account.Username = req.Username
-	if err := account.SetPassword(req.Password); err != nil {
-		httperror.InternalServerError(w, err)
-		return
-	}
+	account := auth.AccountOf(r)
+	status := new(object.Status)
 
-	if user, err := h.app.Dao.Account().CreateUser(ctx, account); err != nil {
+	status.Content = req.Status
+	status.AccountID = account.ID
+	status.Account = account
+
+	if created_status, err := h.app.Dao.Status().CreateStatus(ctx, status); err != nil {
 		httperror.InternalServerError(w, err)
 		return
-	} else if user == nil {
+	} else if created_status == nil {
 		httperror.Error(w, http.StatusBadRequest)
 		return
 	} else {
 		w.Header().Set("Content-Type", "application/json")
-		if err := json.NewEncoder(w).Encode(user); err != nil {
+		if err := json.NewEncoder(w).Encode(created_status); err != nil {
 			httperror.InternalServerError(w, err)
 			return
 		}
 	}
-
-	// panic("Must Implement Account Registration")
 }
