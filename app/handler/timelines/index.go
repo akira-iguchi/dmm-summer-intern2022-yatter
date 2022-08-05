@@ -29,7 +29,7 @@ func (h handler) Index(w http.ResponseWriter, r *http.Request) {
 			formValues.MaxId = value
 		case "since_id":
 			formValues.SinceId = value
-		case "limit":
+		default:
 			formValues.Limit = value
 		}
 	}

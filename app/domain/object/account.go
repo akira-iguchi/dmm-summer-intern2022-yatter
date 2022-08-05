@@ -22,6 +22,7 @@ type (
 		// The username of the account
 		PasswordHash string `json:"-" db:"password_hash"`
 
+		// ポインタ型なのは、nullを許容しているという証であるというハックがある（非公式）
 		// The account's display name
 		DisplayName *string `json:"display_name,omitempty" db:"display_name"`
 
