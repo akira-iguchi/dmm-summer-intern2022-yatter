@@ -38,7 +38,7 @@ func saveImage(w http.ResponseWriter, r *http.Request, v string) (string, error)
 	}
 	defer dst.Close()
 	if _, err = io.Copy(dst, file); err != nil {
-		log.Printf("err %v", err)
+		return "err", err
 	}
 	return value, nil
 }
@@ -52,8 +52,12 @@ func (h *handler) Update(w http.ResponseWriter, r *http.Request) {
 		if v == "avatar" || v == "header" {
 			imageValue, err := saveImage(w, r, v)
 			if err != nil {
-				httperror.Error(w, http.StatusBadRequest)
-				return
+				if err.Error() == "http: no such file" {
+					imageValue = ""
+				} else {
+					httperror.Error(w, http.StatusBadRequest)
+					return
+				}
 			}
 			value = imageValue
 		}
