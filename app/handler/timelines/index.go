@@ -16,8 +16,6 @@ type Queries struct {
 }
 
 func (h handler) Index(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-
 	var formValues Queries
 	queries := []string{"max_id", "since_id", "limit"}
 	for _, v := range queries {
@@ -33,12 +31,10 @@ func (h handler) Index(w http.ResponseWriter, r *http.Request) {
 			formValues.SinceId = value
 		case "limit":
 			formValues.Limit = value
-		default:
-			httperror.Error(w, http.StatusBadRequest)
-			return
 		}
 	}
 
+	ctx := r.Context()
 	if timelines, err := h.app.Dao.Timeline().PublicTimelines(ctx, formValues.MaxId, formValues.SinceId, formValues.Limit); err != nil {
 		httperror.InternalServerError(w, err)
 		return

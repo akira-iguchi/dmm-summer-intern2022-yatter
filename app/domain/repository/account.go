@@ -11,4 +11,5 @@ type Account interface {
 	FindByUsername(ctx context.Context, username string) (*object.Account, error)
 	// TODO: Add Other APIs
 	CreateUser(ctx context.Context, user *object.Account) (*object.Account, error)
+	UpdateUser(ctx context.Context, accountId int64, displayName *string, note *string, avatar *string, header *string) (*object.Account, error)
 }
