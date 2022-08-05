@@ -54,3 +54,18 @@ func (r account) CreateUser(ctx context.Context, user *object.Account) (*object.
 
 	return user, nil
 }
+
+func (r *account) UpdateUser(ctx context.Context, accountId int64, displayName *string, note *string, avatar *string, header *string) (*object.Account, error) {
+	if _, err := r.db.ExecContext(ctx, "update account set display_name = ?, note = ?, avatar = ?, header = ? where id = ?", displayName, note, avatar, header, accountId); err != nil {
+		return nil, fmt.Errorf("%w", err)
+	}
+	user := new(object.Account)
+	if err := r.db.QueryRowxContext(ctx, "select * from account where id = ?", accountId).StructScan(user); err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return nil, nil
+		}
+
+		return nil, fmt.Errorf("%w", err)
+	}
+	return user, nil
+}
