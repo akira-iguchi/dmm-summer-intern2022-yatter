@@ -55,7 +55,7 @@ func (r account) CreateUser(ctx context.Context, user *object.Account) (*object.
 	return user, nil
 }
 
-func (r *account) UpdateUser(ctx context.Context, accountId int64, displayName *string, note *string, avatar *string, header *string) (*object.Account, error) {
+func (r *account) UpdateUser(ctx context.Context, accountId int64, displayName, note, avatar, header *string) (*object.Account, error) {
 	if _, err := r.db.ExecContext(ctx, "update account set display_name = ?, note = ?, avatar = ?, header = ? where id = ?", displayName, note, avatar, header, accountId); err != nil {
 		return nil, fmt.Errorf("%w", err)
 	}
